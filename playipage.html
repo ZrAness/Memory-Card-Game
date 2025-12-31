@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Flow - Game</title>
+    <link rel="stylesheet" href="playpage.css">
+</head>
+<body>
+    <div class="game-header">
+        <div style="width: 44px;"></div>
+        <div class="game-title-section">
+            <h1>Memory Flow</h1>
+            <div class="game-mode">Advanced • Coding</div>
+        </div>
+        <button class="theme-toggle" onclick="toggleTheme()">
+            <svg class="sun-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="4" stroke-width="2"/>
+                <path stroke-linecap="round" stroke-width="2" d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M16.25 7.75l1.41-1.41"/>
+            </svg>
+        </button>
+    </div>
+
+    <div class="game-stats">
+        <div>Timer: <span id="timer">00:30</span></div>
+        <div>Series: <span id="series">4</span></div>
+    </div>
+
+    <div class="game-board-container">
+        <div class="game-board" id="gameBoard"></div>
+        
+        <div class="game-controls">
+            <button class="btn" id="pauseBtn" onclick="togglePause()">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6"/>
+                </svg>
+                Pause
+            </button>
+            <button class="btn" onclick="restartGame()">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                </svg>
+                Restart
+            </button>
+            <button class="btn" onclick="showMenu()">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+                Menu
+            </button>
+        </div>
+    </div>
+
+    <div class="modal" id="winModal">
+        <div class="modal-content">
+            <h2>🎉 Congratulations!</h2>
+            <p>You completed the game in <span id="finalTime"></span>!</p>
+            <button class="btn" onclick="restartGame()">Play Again</button>
+        </div>
+    </div>
+
+    <script src="playpage.js">
+       
+    </script>
+</body>
+</html>
