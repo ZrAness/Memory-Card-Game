@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Card Game</title>
+    <link rel="stylesheet" href="LandPage.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo-container">
+           <img id="logo" src="Icon.png" alt="logo">
+        </div>
+        <button class="theme-toggle" onclick="toggleTheme()">
+            <svg class="sun-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="4" stroke-width="2"/>
+                <path stroke-linecap="round" stroke-width="2" d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M16.25 7.75l1.41-1.41"/>
+            </svg>
+        </button>
+    </div>
+
+    <div class="main-content">
+        <h1>Memory Card Game</h1>
+        <p class="subtitle">
+            A calm memory game to refresh your mind.<br>
+            Flip cards, find pairs, and enjoy a short mental break.
+        </p>
+        <button class="start-button" onclick="startGame()">
+            <svg class="leaf-icon" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clip-rule="evenodd"/>
+            </svg>
+            Start Playing
+        </button>
+    </div>
+
+    <div class="footer">
+        <p class="footer-text">Perfect for 5-minute Breaks!</p>
+    </div>
+
+    <script src="LandPage.js">
+       
+    </script>
+</body>
+</html>
