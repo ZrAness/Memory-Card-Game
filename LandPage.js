@@ -1,6 +1,3 @@
- function startGame() {
-            alert('Starting the memory game!');
-        }
 
         function toggleTheme() {
             const body = document.body;

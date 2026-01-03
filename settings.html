@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Up for Success - Memory Flow</title>
+    <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+    <div class="header">
+        <button class="back-btn" onclick="goBack()">
+            <svg class="back-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+            </svg>
+        </button>
+        <button class="theme-toggle" onclick="toggleTheme()">
+            <svg class="sun-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="4" stroke-width="2"/>
+                <path stroke-linecap="round" stroke-width="2" d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M16.25 7.75l1.41-1.41"/>
+            </svg>
+        </button>
+    </div>
+
+    <h1>Set Up for Success</h1>
+
+    <div class="settings-container">
+        <form id="gameSettingsForm" action="playpage.html" method="GET" onsubmit="handleSubmit(event)">
+            <div class="settings-card">
+                <div class="section">
+                    <h2 class="section-title">Choose your challenge :</h2>
+                    <div class="options-grid">
+                        <label class="option-btn" for="difficulty-easy">
+                            <input type="radio" name="difficulty" value="easy" id="difficulty-easy">
+                            <div class="option-content">
+                                <div class="option-icon">🎯</div>
+                                <div class="option-label">Easy</div>
+                                <div class="option-sublabel">8 cards</div>
+                            </div>
+                        </label>
+                        <label class="option-btn selected" for="difficulty-medium">
+                            <input type="radio" name="difficulty" value="medium" id="difficulty-medium" checked>
+                            <div class="option-content">
+                                <div class="option-icon">🎯🎯</div>
+                                <div class="option-label">Medium</div>
+                                <div class="option-sublabel">12 cards</div>
+                            </div>
+                        </label>
+                        <label class="option-btn" for="difficulty-hard">
+                            <input type="radio" name="difficulty" value="hard" id="difficulty-hard">
+                            <div class="option-content">
+                                <div class="option-icon">🎯🎯🎯</div>
+                                <div class="option-label">Hard</div>
+                                <div class="option-sublabel">16 cards</div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">Pick your favorite theme :</h2>
+                    <div class="options-grid">
+                        <label class="option-btn selected" for="theme-coding">
+                            <input type="radio" name="theme" value="coding" id="theme-coding" checked>
+                            <div class="option-content">
+                                <div class="option-icon">💻</div>
+                                <div class="option-label">Coding</div>
+                            </div>
+                        </label>
+                        <label class="option-btn" for="theme-sports">
+                            <input type="radio" name="theme" value="sports" id="theme-sports">
+                            <div class="option-content">
+                                <div class="option-icon">⚽</div>
+                                <div class="option-label">Sports</div>
+                            </div>
+                        </label>
+                        <label class="option-btn" for="theme-brands">
+                            <input type="radio" name="theme" value="brands" id="theme-brands">
+                            <div class="option-content">
+                                <div class="option-icon">🏷️</div>
+                                <div class="option-label">Brands</div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="start-game-btn">Start Game</button>
+            
+            <div class="footer-text">Play Relax Win</div>
+        </form>
+    </div>
+
+    <script src="settings.js">
+     
+    </script>
+</body>
+</html>

@@ -8,17 +8,22 @@
 </head>
 <body>
     <div class="game-header">
-        <div style="width: 44px;"></div>
-        <div class="game-title-section">
-            <h1>Memory Flow</h1>
-            <div class="game-mode">Advanced • Coding</div>
-        </div>
+        <button class="back-btn" onclick="goBack()">
+            <svg class="back-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+            </svg>
+        </button>
         <button class="theme-toggle" onclick="toggleTheme()">
             <svg class="sun-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="4" stroke-width="2"/>
                 <path stroke-linecap="round" stroke-width="2" d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M16.25 7.75l1.41-1.41"/>
             </svg>
         </button>
+    </div>
+
+    <div class="game-title-section">
+        <h1>Memory Flow</h1>
+        <div class="game-mode"><span id="difficultyLevel">Advanced</span> • <span id="themeType">Coding</span></div>
     </div>
 
     <div class="game-stats">
@@ -53,14 +58,14 @@
 
     <div class="modal" id="winModal">
         <div class="modal-content">
-            <h2>🎉 Congratulations!</h2>
-            <p>You completed the game in <span id="finalTime"></span>!</p>
+            <h2>🎉 You Won!</h2>
+            <p>Time: <span id="finalTime"></span></p>
             <button class="btn" onclick="restartGame()">Play Again</button>
         </div>
     </div>
 
     <script src="playpage.js">
-       
+   
     </script>
 </body>
 </html>

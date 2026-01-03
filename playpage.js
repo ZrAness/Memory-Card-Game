@@ -1,17 +1,44 @@
- const emojis = ['💻', '🚀', '⚡', '🎯', '🔥', '💡', '🎨', '🎮'];
+     // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const difficulty = urlParams.get('difficulty') || 'medium';
+        const theme = urlParams.get('theme') || 'coding';
+
+        // Theme emojis
+        const themes = {
+            coding: ['💻', '🚀', '⚡', '🎯', '🔥', '💡', '🎨', '🎮'],
+            sports: ['⚽', '🏀', '🎾', '🏈', '⚾', '🏐', '🏓', '🏸'],
+            brands: ['🍎', '🔵', '🟢', '🟡', '🔴', '🟣', '🟠', '⚫']
+        };
+
+        // Difficulty settings
+        const difficulties = {
+            easy: { pairs: 4, time: 45, label: 'Easy' },
+            medium: { pairs: 6, time: 30, label: 'Advanced' },
+            hard: { pairs: 8, time: 60, label: 'Expert' }
+        };
+
         let cards = [];
         let flippedCards = [];
         let matchedPairs = 0;
-        let timer = 30;
+        let timer;
         let timerInterval;
         let isPaused = false;
         let series = 4;
+        let currentDifficulty = difficulties[difficulty];
+
+        // Update UI with settings
+        document.getElementById('difficultyLevel').textContent = currentDifficulty.label;
+        document.getElementById('themeType').textContent = theme.charAt(0).toUpperCase() + theme.slice(1);
 
         function initGame() {
             const gameBoard = document.getElementById('gameBoard');
             gameBoard.innerHTML = '';
             
-            const selectedEmojis = emojis.slice(0, 4);
+            // Get emojis for selected theme
+            const themeEmojis = themes[theme] || themes.coding;
+            const selectedEmojis = themeEmojis.slice(0, currentDifficulty.pairs);
+            
+            // Create card pairs
             cards = [...selectedEmojis, ...selectedEmojis]
                 .sort(() => Math.random() - 0.5)
                 .map((emoji, index) => ({
@@ -20,6 +47,13 @@
                     flipped: false,
                     matched: false
                 }));
+
+            // Adjust grid for difficulty
+            if (currentDifficulty.pairs === 8) {
+                gameBoard.style.gridTemplateColumns = 'repeat(4, 1fr)';
+            } else {
+                gameBoard.style.gridTemplateColumns = 'repeat(4, 1fr)';
+            }
 
             cards.forEach(card => {
                 const cardElement = document.createElement('div');
@@ -40,7 +74,7 @@
 
             matchedPairs = 0;
             flippedCards = [];
-            timer = 30;
+            timer = currentDifficulty.time;
             isPaused = false;
             updateTimer();
             startTimer();
@@ -71,7 +105,7 @@
                 card2.matched = true;
                 matchedPairs++;
 
-                if (matchedPairs === 4) {
+                if (matchedPairs === currentDifficulty.pairs) {
                     setTimeout(winGame, 500);
                 }
             } else {
@@ -149,12 +183,12 @@
         }
 
         function showMenu() {
-            alert('Menu functionality - Navigate to main menu');
+            window.location.href = 'settings.html';
         }
 
         function winGame() {
             clearInterval(timerInterval);
-            const timeSpent = 30 - timer;
+            const timeSpent = currentDifficulty.time - timer;
             const minutes = Math.floor(timeSpent / 60);
             const seconds = timeSpent % 60;
             document.getElementById('finalTime').textContent = 
@@ -176,4 +210,9 @@
             }
         }
 
+        function goBack() {
+            window.location.href = 'settings.html';
+        }
+
+        // Initialize game on load
         initGame();
