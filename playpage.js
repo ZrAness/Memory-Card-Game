@@ -23,7 +23,7 @@
         let timer;
         let timerInterval;
         let isPaused = false;
-        let series = 4;
+        let series = 0;
         let currentDifficulty = difficulties[difficulty];
 
         // Update UI with settings
