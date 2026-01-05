@@ -12,7 +12,9 @@
             flex-direction: column;
             padding: 20px;
         }
-
+         body.theme-alt {
+     background: linear-gradient(180deg, #F8FAFC 0%,#E0E7FF 4%,#3ABAFF 67%, #C7D2FE 100%);
+}
         .header {
             display: flex;
             justify-content: space-between;
