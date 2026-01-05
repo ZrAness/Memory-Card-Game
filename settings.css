@@ -83,7 +83,7 @@
         }
 
         .settings-card {
-            background: rgba(139, 92, 246, 0.5);
+            /* background: rgba(139, 92, 246, 0.5); */
             border-radius: 24px;
             padding: 40px;
             backdrop-filter: blur(10px);
@@ -114,17 +114,21 @@
         .option-btn {
             background: white;
             border: 3px solid transparent;
-            padding: 16px 24px;
+            /* padding: 16px 24px; */
+            padding-top: 5px ;
             border-radius: 12px;
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            /* gap: 10px; */
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             position: relative;
             min-height: 70px;
+            padding-left: 0;
+            padding-right: 0;
+            
         }
 
         .option-btn input[type="radio"] {
@@ -134,27 +138,42 @@
         .option-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            
         }
 
         .option-btn.selected {
-            border-color: #8B5CF6;
+            
             background: #F5F3FF;
             box-shadow: 0 4px 16px rgba(139, 92, 246, 0.3);
+            /* border : 3px , solid , #3ba4ca;  */
+            transform: scale(1.05) ;
+  /* box-shadow: 5px 5px 5px lightblue; */
+            
         }
 
         .option-icon {
             font-size: 28px;
             display: flex;
             align-items: center;
-            min-width: 60px;
-            white-space: nowrap;
+            /* min-width: 60px; */
+            /* white-space: nowrap; */
+            justify-content: center;
+            background-color: #6B7280;
+            /* margin-right: 20px; */
         }
-
+.theme-icon{
+     font-size: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* background-color: #6B7280; */
+}
         .option-label {
             color: #1F2937;
-            font-size: 17px;
+            font-size: 20px;
             font-weight: 600;
             flex: 1;
+            /* background-color: aqua; */
         }
 
         .option-sublabel {
@@ -166,8 +185,11 @@
         .option-content {
             display: flex;
             align-items: center;
-            gap: 10px;
+            /* gap: 10px; */
             width: 100%;
+            flex-direction: column;
+            justify-content: center;
+/* background-color: #3B82F6;             */
         }
 
         .start-game-btn {
@@ -205,16 +227,82 @@
             border-top: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        @media (max-width: 768px) {
-            .options-grid {
+        @media (max-width: 500px) {
+             .options-grid {
                 grid-template-columns: 1fr;
             }
-
+                 
             h1 {
                 font-size: 32px;
+            }
+            .section{
+                /* background-color: #8B5CF6; */
+                margin-top: -10px ;
             }
 
             .settings-card {
                 padding: 30px 20px;
+                /* background-color: aquamarine;     */
+                justify-content: center;
+                align-content: center;
+                display: flex;
+                flex-direction: column;
             }
+            .setup{
+                /* background-color: #131215; */
+                margin-top: -20px ;
+                height: 50px;;
+                
+            }
+            .start-btn{
+                /* background-color: #1F2937; */
+                margin-top: -20px ;
+            }
+            .option-btn{
+                /* background-color: rgb(103, 156, 138); */
+                width: 200px ;
+            }
+           .section{
+            /* background-color: blue; */
+            justify-content: center;
+                align-content: center;
+                display: flex;
+                flex-direction: column; 
+           }   
+           .options-grid{  
+             justify-content: center;
+                align-content: center;
+                display: flex;
+                flex-direction: column;
+                /* background-color: #6B7280;  */
+                margin-top: -10px ;
+           }
+           .inside{
+             display: flex;
+                flex-direction: column;
+            justify-content: center;
+            align-items: center;
+           }
+            
         }
+                @media (max-width: 600px) {
+                    .option-label{
+font-size: 15px;
+                    }
+                    .option-icon{
+                        font-size: 20px;
+
+                    }
+                    .theme-icon{
+                        font-size: 20px;
+                    }
+                }
+
+.first{
+    display: flex;
+    flex-direction: row;
+    /* background-color: #6B7280; */
+    justify-content: center;
+    align-items: center;
+    /* column-gap: 10px; */
+}
