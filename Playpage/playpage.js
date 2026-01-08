@@ -27,7 +27,7 @@ const themes = {
 const difficulties = {
     easy: { pairs: 4, time: 30, label: 'Easy' },
     medium: { pairs: 6, time: 45, label: 'Medium' },
-    hard: { pairs:9 , time: 75, label: 'Hard' }
+    hard: { pairs: 9, time: 75, label: 'Hard' }
 };
 
 let cards = [];
@@ -46,10 +46,10 @@ document.getElementById('themeType').textContent = theme.charAt(0).toUpperCase()
 function initGame() {
     const gameBoard = document.getElementById('gameBoard');
     gameBoard.innerHTML = '';
-    
+
     // Get items for selected theme
     const themeItems = themes[theme] || themes.coding;
-    
+
     // Randomly select items for the difficulty
     let selectedItems = [];
     if (themeItems.length >= currentDifficulty.pairs) {
@@ -63,7 +63,7 @@ function initGame() {
             selectedItems.push(themeItems[i % themeItems.length]);
         }
     }
-    
+
     // Create card pairs
     cards = [...selectedItems, ...selectedItems]
         .sort(() => Math.random() - 0.5)
@@ -84,20 +84,20 @@ function initGame() {
     cards.forEach(card => {
         const cardElement = document.createElement('div');
         cardElement.className = 'card';
-        
+
         // Check if content is an image path or emoji
         const isImage = card.content.includes('.png') || card.content.includes('.jpg') || card.content.includes('.jpeg');
-        
+
         cardElement.innerHTML = `
             <div class="card-inner">
                 <div class="card-face card-front">
                     <span class="question-mark">?</span>
                 </div>
                 <div class="card-face card-back">
-                    ${isImage ? 
-                        `<img class="card-image" src="${card.content}" alt="card">` : 
-                        `<span class="card-content">${card.content}</span>`
-                    }
+                    ${isImage ?
+                `<img class="card-image" src="${card.content}" alt="card">` :
+                `<span class="card-content">${card.content}</span>`
+            }
                 </div>
             </div>
         `;
@@ -115,7 +115,7 @@ function initGame() {
 
 function flipCard(cardId) {
     if (isPaused || flippedCards.length >= 2) return;
-    
+
     const card = cards[cardId];
     if (card.flipped || card.matched) return;
 
@@ -166,15 +166,15 @@ function updateBoard() {
 
 function startTimer() {
     if (timerInterval) clearInterval(timerInterval);
-    
+
     timerInterval = setInterval(() => {
         if (!isPaused && timer > 0) {
             timer--;
             updateTimer();
-            
+
             if (timer === 0) {
                 clearInterval(timerInterval);
-                showAllCards();
+                showLoseModal();
             }
         }
     }, 1000);
@@ -188,9 +188,9 @@ function showAllCards() {
             card.flipped = true;
         }
     });
-    
+
     updateBoard();
-    
+
     // Wait 2 seconds to show cards, then show alert and restart
     setTimeout(() => {
         alert('Time\'s up! Try again.');
@@ -201,14 +201,14 @@ function showAllCards() {
 function updateTimer() {
     const minutes = Math.floor(timer / 60);
     const seconds = timer % 60;
-    document.getElementById('timer').textContent = 
+    document.getElementById('timer').textContent =
         `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 }
 
 function togglePause() {
     isPaused = !isPaused;
     const pauseBtn = document.getElementById('pauseBtn');
-    
+
     if (isPaused) {
         pauseBtn.innerHTML = `
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -229,6 +229,7 @@ function togglePause() {
 function restartGame() {
     if (timerInterval) clearInterval(timerInterval);
     document.getElementById('winModal').classList.remove('active');
+    document.getElementById('loseModal').classList.remove('active');
     initGame();
 }
 
@@ -241,14 +242,16 @@ function winGame() {
     const timeSpent = currentDifficulty.time - timer;
     const minutes = Math.floor(timeSpent / 60);
     const seconds = timeSpent % 60;
-    document.getElementById('finalTime').textContent = 
+    document.getElementById('finalTime').textContent =
         `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
     document.getElementById('winModal').classList.add('active');
-    
+
     series++;
     document.getElementById('series').textContent = series;
 }
-
+function showLoseModal() {
+    document.getElementById('loseModal').classList.add('active');
+}
 function toggleTheme() {
     document.body.classList.toggle('theme-alt');
 }
