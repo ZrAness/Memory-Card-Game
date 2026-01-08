@@ -114,7 +114,7 @@
         }
 
         .option-btn {
-            background: white;
+            background-color: white;
             border: 3px solid transparent;
             /* padding: 16px 24px; */
             padding-top: 5px ;
@@ -130,24 +130,23 @@
             min-height: 70px;
             padding-left: 0;
             padding-right: 0;
-            
         }
 
         .option-btn input[type="radio"] {
             display: none;
         }
 
-        .option-btn:hover {
+        /* .option-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             
-        }
+        } */
 
-        .option-btn.selected {
+        .option-btn.selected {      
             
             background: #F5F3FF;
             box-shadow: 0 4px 16px rgba(139, 92, 246, 0.3);
-            /* border : 3px , solid , #3ba4ca;  */
+            /* border : 3px , solid , #3ba4ca; */ 
             transform: scale(1.05) ;
   /* box-shadow: 5px 5px 5px lightblue; */
             

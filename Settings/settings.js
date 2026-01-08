@@ -28,7 +28,7 @@
             console.log('Game Settings:', { difficulty, theme });
             
             // Create URL with parameters
-            const url = `playpage.html?difficulty=${difficulty}&theme=${theme}`;
+            const url = `../Playpage/playpage.html?difficulty=${difficulty}&theme=${theme}`;
             
             // Redirect to the game page with parameters
             window.location.href = url;
@@ -42,3 +42,4 @@
       function toggleTheme() {
     document.body.classList.toggle('theme-alt');
 }
+  
