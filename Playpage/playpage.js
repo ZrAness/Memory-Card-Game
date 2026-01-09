@@ -19,8 +19,28 @@ const themes = {
         '../Images/react.png',
         '../Images/ubuntu.png',
     ],
-    sports: ['⚽', '🏀', '🎾', '🏈', '⚾', '🏐', '🏓', '🏸', '🥊'],
-    brands: ['🍎', '🔵', '🟢', '🟡', '🔴', '🟣', '🟠', '⚫', '🟤']
+    sports: [
+        '../Images/baseball.png',
+        '../Images/basketball.png',
+        '../Images/billiardo.png',
+        '../Images/bowling.png',
+        '../Images/football.png',
+        '../Images/hoop.png',
+        '../Images/judo.png',
+        '../Images/tennis.png',
+        '../Images/volleyball.png'
+    ],
+    brands: [
+        '../Images/adidas.png',
+        '../Images/apple.png',
+        '../Images/asus.png',
+        '../Images/google.png',
+        '../Images/huawei.png',
+        '../Images/intel.png',
+        '../Images/nike.png',
+        '../Images/rugby.png',
+        '../Images/spotify.png'
+    ]
 };
 
 // Difficulty settings - hard mode now has 9 pairs (18 cards)
