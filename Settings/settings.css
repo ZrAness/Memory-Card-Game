@@ -1,4 +1,4 @@
-      * {
+* {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -86,6 +86,10 @@ body.theme-alt .sun-icon{
             margin-bottom: 40px;
         }
 
+        body.theme-alt h1 {
+            color: #1E293B;
+        }
+
         .settings-container {
             max-width: 750px;
             margin: 0 auto;
@@ -114,6 +118,10 @@ body.theme-alt .sun-icon{
             font-size: 22px;
             font-weight: 600;
             margin-bottom: 20px;
+        }
+
+        body.theme-alt .section-title {
+            color: #1E293B;
         }
 
         .options-grid {
@@ -235,6 +243,10 @@ body.theme-alt .sun-icon{
             margin-top: 20px;
             padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        body.theme-alt .footer-text {
+            color: #475569;
         }
 
         @media (max-width: 500px) {

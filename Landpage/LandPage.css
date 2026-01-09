@@ -1,4 +1,4 @@
- * {
+* {
      margin: 0;
      padding: 0;
      box-sizing: border-box;
@@ -13,19 +13,15 @@
      padding-left: 20px;
      padding-right: 20px;
      align-items: center;
-     /* position: relative; */
      overflow: hidden;
  }
 
  body.theme-alt {
-     background: linear-gradient(180deg, #F8FAFC 0%, #E0E7FF 4%, #3ABAFF 67%, #C7D2FE 100%);
+     background: linear-gradient(180deg, #EFF6FF 0%, #DBEAFE 20%, #BFDBFE 45%, #93C5FD 70%, #60A5FA 100%);
  }
 
  .header {
      width: 100%;
-
-
-     /* background-color: #1F2937; */
      padding-top: 25px;
      padding-bottom: 25px;
      display: flex;
@@ -42,7 +38,6 @@
  .logo-container img {
      width: 100px;
      height: 70px;
-     /* background-color: #1F2937; */
  }
 
  .theme-toggle {
@@ -87,9 +82,6 @@
      text-align: center;
      padding: 40px 20px;
      margin-top: -50px;
-     /* background-color: azure; */
-     /* margin-top: 10px; */
-     /* overflow: hidden; */
  }
 
  h1 {
@@ -100,6 +92,10 @@
      letter-spacing: -0.5px;
  }
 
+ body.theme-alt h1 {
+     color: #1E293B;
+ }
+
  .subtitle {
      color: rgba(255, 255, 255, 0.95);
      font-size: 18px;
@@ -108,29 +104,27 @@
      max-width: 600px;
  }
 
+ body.theme-alt .subtitle {
+     color: #334155;
+ }
+
  .start-button {
      background: white;
      color: #1F2937;
      border: none;
-     /* padding: 20px 55px; */
      padding-left: 100px;
      padding-right: 100px;
      padding-top: 15px;
      padding-bottom: 15px;
-     /* padding : 30 50 30 50 ; */
      font-size: 30px;
      font-weight: 550;
      border-radius: 100px;
      cursor: pointer;
-     /* display: inline-flex; */
      align-items: center;
      gap: 10px;
-     /* width : 500px; */
      text-align: center;
      transition: transform 0.2s ease, box-shadow 0.2s ease;
      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-     /* margin-top: 160px; */
-
  }
 
  .start-button:hover {
@@ -166,11 +160,20 @@
      height: 1px;
      background: rgba(255, 255, 255, 0.25);
  }
+ body.theme-alt .logo-container img {
+    filter: brightness(0.8) contrast(1.2);
+    /* or */
+    filter: invert(1); /* inverts all colors */
+}
 
  .footer-text {
      color: rgba(255, 255, 255, 0.9);
      font-size: 16px;
      margin-top: 30px;
+ }
+
+ body.theme-alt .footer-text {
+     color: #475569;
  }
 
  @media only screen and (max-width:500px) {

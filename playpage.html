@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory Flow - Game</title>
-    <link rel="stylesheet" href="playpage.css">
+    <link rel="stylesheet" href="./Playpage/playpage.css">
 </head>
 
 <body>
     <div class="game-wrapper">
         <div class="game-header">
-            <a href="../Settings/settings.html"><button class="back-btn">
+            <a href="settings.html"><button class="back-btn">
                     <svg class="back-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
                             d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -62,7 +62,7 @@
         </div>
 
         <div class="modal" id="winModal">
-            <div class="modal-content">
+            <div class="modal-content" > 
                 <h2>🎉 You Won!</h2>
                 <p>Time: <span id="finalTime"></span></p>
                 <button class="btn" onclick="restartGame()">Play Again</button>
@@ -77,7 +77,7 @@
         </div>
     </div>
 
-    <script src="playpage.js">
+    <script src="./Playpage/playpage.js"> 
 
     </script>
 </body>
