@@ -38,7 +38,7 @@ const themes = {
         '../Images/huawei.png',
         '../Images/intel.png',
         '../Images/nike.png',
-        '../Images/rugby.png',
+        '../Images/windows.png',
         '../Images/spotify.png'
     ]
 };
