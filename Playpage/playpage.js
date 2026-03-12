@@ -18,6 +18,7 @@ const themes = {
         '../Images/python.png',
         '../Images/react.png',
         '../Images/ubuntu.png',
+        
     ],
     sports: [
         '../Images/baseball.png',
