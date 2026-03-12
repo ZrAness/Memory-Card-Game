@@ -6,41 +6,41 @@ const theme = urlParams.get('theme') || 'coding';
 // Theme items - coding theme now uses image paths
 const themes = {
     coding: [
-        '../Images/c.png',
-        '../Images/code.png',
-        '../Images/cpp.png',
-        '../Images/Cpu.png',
-        '../Images/Css.png',
-        '../Images/github.png',
-        '../Images/html.png',
-        '../Images/java.png',
-        '../Images/linux.png',
-        '../Images/python.png',
-        '../Images/react.png',
-        '../Images/ubuntu.png',
+        '../images/c.png' , 
+        '../images/code.png',
+        '../images/cpp.png',
+        '../images/Cpu.png',
+        '../images/Css.png',
+        '../images/github.png',
+        '../images/html.png',
+        '../images/java.png',
+        '../images/linux.png',
+        '../images/python.png',
+        '../images/react.png',
+        '../images/ubuntu.png',
         
     ],
     sports: [
-        '../Images/baseball.png',
-        '../Images/basketball.png',
-        '../Images/billiardo.png',
-        '../Images/bowling.png',
-        '../Images/football.png',
-        '../Images/hoop.png',
-        '../Images/judo.png',
-        '../Images/tennis.png',
-        '../Images/volleyball.png'
+        '../images/baseball.png',
+        '../images/basketball.png',
+        '../images/billiardo.png',
+        '../images/bowling.png',
+        '../images/football.png',
+        '../images/hoop.png',
+        '../images/judo.png',
+        '../images/tennis.png',
+        '../images/volleyball.png'
     ],
     brands: [
-        '../Images/adidas.png',
-        '../Images/apple.png',
-        '../Images/asus.png',
-        '../Images/google.png',
-        '../Images/huawei.png',
-        '../Images/intel.png',
-        '../Images/nike.png',
-        '../Images/windows.png',
-        '../Images/spotify.png'
+        '../images/adidas.png',
+        '../images/apple.png',
+        '../images/asus.png',
+        '../images/google.png',
+        '../images/huawei.png',
+        '../images/intel.png',
+        '../images/nike.png',
+        '../images/windows.png',
+        '../images/spotify.png'
     ]
 };
 
